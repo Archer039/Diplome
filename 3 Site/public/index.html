@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body>
+    <div id="app">
+        <aside class="sidebar">
+            <div class="search">
+                <form action="#">
+                    <input type="search" name="search" id="search" placeholder="Поиск">
+                </form>
+            </div>
+            <nav>
+                <h3>Меню</h3>
+                <ul>
+                    <li><a href="#">ГЛАВНАЯ</a></li>
+                    <li><a href="#">ПРО НАС</a></li>
+                    <li><a href="#">КОНТАКТЫ</a></li>
+                </ul>
+            </nav>
+            <div class="info">
+                <h3>Информация про нас</h3>
+                <div class="info__card">
+                    <img src="img/articles-pic/cat.jpg" alt="pic_hobby">
+                    <p>На днях был придуман новый язык программирования - Kotik!</p>
+                </div>
+                <div class="info__card">
+                    <img src="img/articles-pic/perl.png" alt="pic_perl">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                    <button>ДАЛЕЕ</button>
+                </div>
+            </div>
+            <div class="help">
+                <h3>Помощь</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias eveniet enim cumque, obcaecati possimus eum adipisci pariatur voluptas placeat ullam!</p>
+                <ul class="help__contacts">
+                    <li><img src="img/icons/message-envelope.png" alt=""><a href="mailto:test@mail.com">test@mail.com</a></li>
+                    <li><img src="img/icons/call-answer.png" alt=""><a href="tel:000 000-0000">000 000-0000</a></li>
+                    <li><img src="img/icons/home.png" alt=""><a href="#">USA Washington Sattle<br> Northway 13002</a></li>
+                </ul>
+                <p class="copyright">Все права защищены &copy;. При использовании данных указывайте ссылки на первоисточник</p>
+            </div>
+        </aside>
+        <main :class="{sidebarOn: showSidebar}">
+            <span class="icons menu-icon" v-on:click="showSidebar = !showSidebar">
+                <img src="img/icons/menu icon.png" alt="">
+            </span>
+            <h1>СМИ портал</h1>
+            <div class="fixed-new">
+                <div class="column1">
+                    <h4>Работа мечты компания Google</h4>
+                    <p class="fixed-new__preview">что из себя представляет работа в google?</p>
+                    <p class="fixed-new__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim, adipisci? Accusantium doloribus esse soluta, ad reprehenderit facere quibusdam. Voluptatum nulla unde amet veniam placeat exercitationem nihil quam nobis eum debitis.
+                    </p>
+                    <button>Читать дальше</button>
+                </div>
+                <div class="column2">
+                    <img src="img/articles-pic/porGirl.jpg" alt="">
+                </div>
+            </div>
+            <div id="articles">
+                <div class="latest-news">
+                    <h2>Последние опубликованные</h2>
+                    <div>
+                        <div class="news-card" v-for="article in latestNews":key="article" :value="article">
+                            <div>
+                                <img v-bind:src="article.imgSrc" alt="">
+                            </div>
+                            <h4>{{ article.title }}</h4>
+                            <p>{{ article.text }}</p>
+                            <button>далее</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="other-news">
+                    <div class="news-card" v-for="article in otherNews" :key="article" :value="article">
+                        <img v-bind:src="article.imgSrc" alt="">
+                        <h4>{{ article.title }}</h4>
+                        <p>{{ article.text }}</p>
+                        <button>детали</button>
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <h2>Информация</h2>
+                <div class="footer__info">
+                    <div class="item">
+                        <img src="img/icons/multiple-users-silhouette icon.png">
+                        <div>
+                            <h5>Множество клиентов</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente, accusamus?</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="img/icons/youtube icon.png">
+                        <div>
+                            <h5>Большая аудитория YouTube</h5>
+                            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti, repudiandae.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="https://kit.fontawesome.com/d5ae5f52b6.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

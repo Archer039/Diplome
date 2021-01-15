@@ -1,0 +1,188 @@
+main {
+    h1 {
+        @media only screen and (max-width: 768px) {
+            margin-top: 100px; 
+        }
+        @media only screen and (max-width: 425px) {
+            margin-top: 50px; 
+        }
+    }
+    box-sizing: border-box;
+    padding: 80px 110px;
+    @media only screen and (max-width: 768px) {
+        padding: 25px 20px;
+    }
+    .icons {
+        position: absolute;
+        top: 20px;
+        left: 35px;
+        @media only screen and (max-width: 768px) {
+            padding: 12px 15px 8px 15px;
+            background-color: #e5e9e9;
+            border-radius: 5px;
+        }
+        @media only screen and (max-width: 425px) {
+            top: 10px; 
+        }
+    }
+    .fixed-new {
+        display: flex;
+        border-bottom: 2px solid #e0e3e5;
+        margin-top: 75px;
+        @media only screen and (max-width: 768px) {
+            margin-top: 60px;
+        }
+        @media only screen and (max-width: 425px) {
+            flex-direction: column-reverse;
+        }
+        .column1 {
+            width: 45%;
+            margin-right: 10%;
+            @media only screen and (max-width: 768px) {
+                width: 35%;
+            }
+            @media only screen and (max-width: 425px) {
+                width: 100%;
+            }
+            h4 {
+                font-size: 36pt;
+                margin-bottom: 20px;
+                line-height: 60px;
+            }
+            .fixed-new__preview {
+                margin-bottom: 25px;
+                text-transform: uppercase;
+            }
+            
+        }
+        .column2 {
+            width: 45%;
+            @media only screen and (max-width: 768px) {
+                width: 55%;
+            }
+            @media only screen and (max-width: 425px) {
+                width: 100%;
+            }
+            img {
+                width: 100%;
+                border-radius: 5px;
+            }
+        }
+        button {
+            margin: 30px 0 45px 0;
+            @media only screen and (max-width: 768px) {
+                margin-bottom: 50px;
+            }
+        }
+    }
+    .latest-news {
+        margin: 60px 0;
+        padding-bottom: 35px;
+        border-bottom: 2px solid #e0e3e5;
+        h2 {
+            margin-bottom: 40px;
+        }
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            .news-card {
+                box-sizing: border-box;
+                width: 50%;
+                padding: 15px 0 40px 0;
+                border-bottom: 2px solid #cecdcd;
+                @media only screen and (max-width: 425px) {
+                    width: 100%;
+                    margin: 10px 0!important;
+                    padding: 0!important;
+                    border: none!important;
+                }
+                div {
+                    overflow: hidden;
+                    border-radius: 5px;
+                    width: 100%;
+                    height: 170px;
+                    margin-bottom: 20px;
+                    img {
+                        width: 100%;
+                        transition: all 0.5s ease;
+                    }
+                    img:hover {
+                        transform: scale(1.1);
+                    }
+                }
+                h4 {
+                    margin-bottom: 25px;
+                }
+                p {
+                    margin-bottom: 20px;
+                }
+            }
+            .news-card:nth-child(odd) {
+                padding-right: 15px;
+                border-right: 1px solid #cecdcd;
+            }
+            .news-card:nth-child(even) {
+                padding-left: 15px;
+                border-left: 1px solid #cecdcd;
+            }
+            .news-card:nth-child(-n+2) {
+                padding-top: 0;
+            }
+            .news-card:nth-last-child(-n+2) {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+
+        }
+    }
+    .other-news {
+        display: flex;
+        @media only screen and (max-width: 768px) {
+            flex-wrap: wrap;
+        }
+        .news-card {
+            box-sizing: border-box;
+            width: 20%;
+            @media only screen and (max-width: 768px) {
+                width: 50%;
+                margin-top: 30px!important;
+            }
+            img {
+                width: 100%;
+                height: 120px;
+                margin-bottom: 20px;
+                transition: all 1s ease;
+            }
+            img:hover {
+                cursor: pointer;
+                box-shadow: 0 0 20px slategray;
+            }
+            h4 {
+                margin-bottom: 20px;
+            }
+            p {
+                margin-bottom: 30px;
+            }
+            button {
+                font-size: 10pt;
+            }
+        }
+        .news-card:nth-child(odd) {
+            @media only screen and (max-width: 768px) {
+                padding-right: 16px;
+            }
+        }
+        .news-card:nth-child(even) {
+            @media only screen and (max-width: 768px) {
+                padding-left: 16px;
+            }
+        }
+        .news-card:not(:last-child) {
+            margin-right: 30px;
+            @media only screen and (max-width: 768px) {
+                margin: 0;
+            }
+        }
+    }
+}
+
